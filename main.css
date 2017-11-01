@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(0,0,0,0.7);
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100%;
+    min-width: 100%;
+    background-attachment: fixed;
+    background-image: url(img/thumb-1920-176192.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: bisque !important;
+}

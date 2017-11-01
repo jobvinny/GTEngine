@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>GT SEARCH ENGINE</title>
+        <meta http-equiv="content-type" content="text/html"; charset="utf-8"/>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+    <div>
+        <div class="container">
+            <br />
+            <h2 align="center">Ajax Live Data Search using Php Mysql</h2>
+            <br />
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Search</span>
+                    <input type="text" name="search_text" id="search_text" placeholder="search by car name" class="form-control"/>
+                </div>
+            </div>
+            <br />
+            <div id="result"></div>
+        </div>
+    </div>
+    </body>
+</html>
+<script>
+    $(document).ready(function(){
+        $('#search_text').keyup(function(){
+            var txt = $(this).val();
+            if(txt != ''){
+                 $('#result').html('');
+                $.ajax({
+                    url:"fetch.php",
+                    method:"post",
+                    data:{search:txt},
+                    dataType:"text",
+                    success:function(data)
+                    {
+                        $('#result').html(data);
+                    }
+                });
+            }
+            else{
+                $('#result').html('');
+                $.ajax({
+                    url:"fetch.php",
+                    method:"post",
+                    data:{search:txt},
+                    dataType:"text",
+                    success:function(data)
+                    {
+                        $('#result').html(data);
+                    }
+                });
+            }
+        });
+    });
+</script>
